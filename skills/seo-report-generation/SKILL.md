@@ -1,12 +1,8 @@
 ---
 name: seo-report-generation
-description: Generate client-facing SME SEO/GEO monthly reports using fixed money keywords, GA4 enquiry events, GSC query data, DataForSEO rank/SERP/GEO data, and one-diagnosis discipline.
-version: 0.1.0
-author: Marle
-license: MIT
-metadata:
-  hermes:
-    tags: [seo, geo, reporting, gsc, ga4, dataforseo]
+description: "Generate client-facing SME SEO/GEO monthly reports using fixed money keywords, GA4 enquiry events, GSC query data, DataForSEO rank/SERP/GEO data, and one-diagnosis discipline."
+version: 0.1.1
+tags: [seo, geo, reporting, gsc, ga4, dataforseo]
 ---
 
 # SEO Report Generation

@@ -1,12 +1,8 @@
 ---
 name: wordpress-seo-implementation
-description: Turn SEO report actions into safe WordPress implementation tasks: metadata, schema, internal links, target page fixes, content briefs, and rendered verification.
-version: 0.1.0
-author: Marle
-license: MIT
-metadata:
-  hermes:
-    tags: [seo, wordpress, implementation, metadata, schema]
+description: "Turn SEO report actions into safe WordPress implementation tasks: metadata, schema, internal links, target page fixes, content briefs, and rendered verification."
+version: 0.1.1
+tags: [seo, wordpress, implementation, metadata, schema]
 ---
 
 # WordPress SEO Implementation

@@ -1,12 +1,8 @@
 ---
 name: dataforseo-seo-workflows
-description: Use DataForSEO for SME SEO/GEO rank tracking, SERP blocker detection, local pack checks, opportunity validation, AI visibility, and quarterly refreshes with cost controls.
-version: 0.1.0
-author: Marle
-license: MIT
-metadata:
-  hermes:
-    tags: [seo, dataforseo, serp, rank-tracking, geo, local-seo]
+description: "Use DataForSEO for SME SEO/GEO rank tracking, SERP blocker detection, local pack checks, opportunity validation, AI visibility, and quarterly refreshes with cost controls."
+version: 0.1.1
+tags: [seo, dataforseo, serp, rank-tracking, geo, local-seo]
 ---
 
 # DataForSEO SEO Workflows

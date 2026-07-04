@@ -1,12 +1,8 @@
 ---
 name: seo-client-onboarding
-description: Establish stable client SEO/GEO reporting baselines: profile, goals, brand terms, lead quality, money keywords, GA4 events, local intent, competitors, and AI prompt panel.
-version: 0.1.0
-author: Marle
-license: MIT
-metadata:
-  hermes:
-    tags: [seo, onboarding, reporting, client-config]
+description: "Establish stable client SEO/GEO reporting baselines: profile, goals, brand terms, lead quality, money keywords, GA4 events, local intent, competitors, and AI prompt panel."
+version: 0.1.1
+tags: [seo, onboarding, reporting, client-config]
 ---
 
 # SEO Client Onboarding
