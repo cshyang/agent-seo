@@ -30,6 +30,20 @@ Use when a report or diagnostic needs stable rank/SERP data, search volume valid
 
 Reuse the same SERP response for as many report fields as possible. Record task count / estimated cost in the report appendix.
 
+Before large pulls, estimate cost with:
+
+```bash
+python scripts/dataforseo_cost_estimate.py estimate serp_google_organic_live_advanced --count 20
+```
+
+For raw API envelopes, normalize items before handing them to an agent:
+
+```bash
+python scripts/dataforseo_normalize.py response.json --max-chars 12000
+```
+
+Prefer bulk endpoints over many single-keyword calls, and avoid re-fetching data already pulled in the same report run.
+
 ## Avoid by default
 
 - Backlinks API.

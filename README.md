@@ -9,7 +9,7 @@ The repo is intentionally **client-data-free**. Real client configs, credentials
 - A reusable SEO/GEO reporting and operations toolkit.
 - A source of truth for agent workflows used by Hermes, Codex, Claude, or humans.
 - A set of schemas and QA checks that keep reports comparable over time.
-- A foundation for future adapters such as WordPress, Next.js, Google Workspace, or cron jobs.
+- A foundation for future adapters such as WordPress, Next.js, Google Workspace, Common Crawl, Moz, or cron jobs.
 
 ## What this repo is not
 
@@ -57,6 +57,18 @@ Classify a GSC export draft:
 
 ```bash
 python scripts/classify_gsc_queries.py examples/sample-gsc-export.csv --brand-term examplebrand
+```
+
+Estimate a DataForSEO run before adding API spend:
+
+```bash
+python scripts/dataforseo_cost_estimate.py estimate serp_google_organic_live_advanced --count 20
+```
+
+Validate skill frontmatter:
+
+```bash
+python scripts/validate_skills.py
 ```
 
 ## Data safety

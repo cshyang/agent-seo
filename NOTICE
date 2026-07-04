@@ -1,0 +1,8 @@
+Agent SEO
+
+This project includes methodology and script ideas adapted from:
+
+- claude-seo: https://github.com/AgriciDaniel/claude-seo
+  MIT License, Copyright (c) 2026 agricidaniel
+
+Adapted areas include DataForSEO cost/normalization guardrails, optional backlink/source enrichment using Common Crawl and Moz, GEO/AI crawler and citability checks, schema validation guidance, and safe URL-fetching patterns. The implementation in this repository is tailored for an operator-side, engine-agnostic SEO/GEO workflow and should not be treated as a verbatim clone of the upstream plugin.

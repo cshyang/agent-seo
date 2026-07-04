@@ -25,6 +25,15 @@ Use when a report action requires inspection or changes inside a WordPress site.
 - Add internal links to money keyword target pages.
 - Prepare draft content briefs.
 - Export page inventory for reporting workflows.
+- Apply schema checks from `methodology/schema-checks.md` before recommending new JSON-LD.
+
+## URL fetch safety
+
+When scripts fetch user/client-supplied URLs, validate first:
+
+```bash
+python scripts/url_safety.py https://example.com/page
+```
 
 ## Verification
 

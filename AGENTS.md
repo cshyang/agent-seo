@@ -30,8 +30,9 @@ This repo defines reusable SEO/GEO operations workflows for agents such as Herme
 
 ## Safety checklist before commit
 
-- No `.env` or token files.
-- No real client raw exports.
-- No real lead names, phone numbers, emails, or WhatsApp transcripts.
-- No client account IDs unless intentionally sanitized or documented as examples.
-- Scripts run against example fixtures.
+- [ ] No `.env` or token files.
+- [ ] No real client raw exports.
+- [ ] No real lead names, phone numbers, emails, or WhatsApp transcripts.
+- [ ] No client account IDs unless intentionally sanitized or documented as examples.
+- [ ] Scripts run against example fixtures.
+- [ ] Adapted upstream code or methodology is attributed in `NOTICE`.

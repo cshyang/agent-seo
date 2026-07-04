@@ -8,5 +8,7 @@ Potential adapters:
 - `nextjs/`: route metadata/schema checks and sitemap validation.
 - `google-workspace/`: report export to Docs/Drive/Gmail drafts.
 - `hermes/`: install/sync skills into a Hermes profile.
+- `commoncrawl/`: optional public-web source discovery and historical graph context.
+- `moz/`: optional authority/link metric enrichment.
 
 Adapters should not own the methodology. They implement or inspect site-specific changes after the reporting loop identifies the work.
