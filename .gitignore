@@ -1,0 +1,30 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*token*
+*credentials*
+client-secrets*.json
+oauth*.json
+
+# Client/local operating data
+.seo-ops/
+clients/
+reports/
+exports/
+raw-data/
+private/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

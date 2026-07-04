@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cshyang/agent-seo/schemas/client-config.schema.json",
+  "title": "Agent SEO Client Config",
+  "type": "object",
+  "required": ["client_name", "domain", "service_area", "primary_goal", "local_intent", "brand_terms", "money_keywords", "ga4_events", "geo_prompts"],
+  "additionalProperties": false,
+  "properties": {
+    "client_name": {"type": "string", "minLength": 1},
+    "domain": {"type": "string", "format": "uri"},
+    "industry": {"type": "string"},
+    "service_area": {"type": "string"},
+    "primary_goal": {"type": "string"},
+    "seasonality_notes": {"type": "string"},
+    "local_intent": {"type": "string", "enum": ["high", "medium", "low"]},
+    "gsc_property": {"type": "string"},
+    "ga4_property_id": {"type": "string"},
+    "gbp_profile": {"type": "string"},
+    "local_competitors": {"type": "array", "items": {"type": "string"}},
+    "brand_terms": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "lead_quality_notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "good_fit": {"type": "string"},
+        "poor_fit": {"type": "string"},
+        "feedback_owner": {"type": "string"},
+        "feedback_cadence": {"type": "string", "enum": ["monthly", "quarterly", "unavailable"]}
+      }
+    },
+    "money_keywords": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["keyword", "theme", "target_url"],
+        "additionalProperties": false,
+        "properties": {
+          "keyword": {"type": "string"},
+          "theme": {"type": "string"},
+          "target_url": {"type": "string"},
+          "baseline_position": {"type": ["number", "null"]},
+          "baseline_volume": {"type": ["integer", "null"], "minimum": 0}
+        }
+      }
+    },
+    "ga4_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["event_name", "label", "value_tier", "weight"],
+        "additionalProperties": false,
+        "properties": {
+          "event_name": {"type": "string"},
+          "label": {"type": "string"},
+          "value_tier": {"type": "string", "enum": ["High", "Medium", "Low"]},
+          "weight": {"type": "number", "minimum": 0, "maximum": 1},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "geo_prompts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["prompt", "platforms"],
+        "additionalProperties": false,
+        "properties": {
+          "prompt": {"type": "string"},
+          "platforms": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    },
+    "changelog": {"type": "array", "items": {"type": "string"}}
+  }
+}

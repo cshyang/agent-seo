@@ -1,0 +1,54 @@
+client_name: Example Client
+domain: https://www.example.com
+industry: Local professional services
+service_area: Example City
+primary_goal: Qualified enquiries via form, WhatsApp, and calls
+seasonality_notes: Replace with known busy and slow months.
+local_intent: medium
+gsc_property: sc-domain:example.com
+ga4_property_id: "000000000"
+gbp_profile: https://maps.google.com/?cid=0000000000000000000
+local_competitors:
+  - Example Competitor A
+  - Example Competitor B
+brand_terms:
+  - example client
+  - examplebrand
+lead_quality_notes:
+  good_fit: Commercial enquiries inside the service area with a defined project need.
+  poor_fit: Job seekers, suppliers, residential-only requests, and out-of-area enquiries.
+  feedback_owner: Client sales/admin team
+  feedback_cadence: monthly
+money_keywords:
+  - keyword: example service provider city
+    theme: Core service
+    target_url: /example-service/
+    baseline_position: null
+    baseline_volume: 90
+  - keyword: example commercial service city
+    theme: Commercial service
+    target_url: /commercial-service/
+    baseline_position: null
+    baseline_volume: 50
+ga4_events:
+  - event_name: generate_lead
+    label: Contact form submitted
+    value_tier: High
+    weight: 1.0
+    notes: Direct enquiry form.
+  - event_name: whatsapp_click
+    label: WhatsApp click
+    value_tier: High
+    weight: 0.8
+    notes: Click does not guarantee completed conversation.
+  - event_name: phone_click
+    label: Phone number click
+    value_tier: Medium
+    weight: 0.6
+geo_prompts:
+  - prompt: best example service provider in Example City
+    platforms: [chatgpt, gemini, perplexity]
+  - prompt: recommend an example commercial service company in Example City
+    platforms: [chatgpt, gemini, perplexity]
+changelog:
+  - "2026-07-04: Initial example config created. Replace with real client data outside this repo."
