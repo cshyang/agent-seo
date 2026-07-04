@@ -17,6 +17,28 @@ This repo defines reusable SEO/GEO operations workflows for agents such as Herme
 - Client-facing reports must remove `>> GEN:` instructions and unresolved placeholders.
 - Keep report methodology commercially grounded: enquiries first, one diagnosis, two to three actions.
 
+## Repo as the unit of operation
+
+This repo is cloned and used whole, from the repo root. Skills are repo-resident, not standalone-installable: SKILL.md files reference `templates/`, `schemas/`, and `scripts/` by repo-root-relative path. Do not copy individual skill folders into `~/.claude/skills/` or similar — the references will dangle. Templates live only in `templates/` (single source of truth); skill folders must not carry their own copies.
+
+## Client state convention
+
+Real client state lives in `.seo-ops/` at the repo root (gitignored), one folder per client slug:
+
+```text
+.seo-ops/
+  clients/
+    <slug>/                # e.g., sua
+      config.yaml          # matches schemas/client-config.schema.json
+      reports/
+        2026-06.md         # one file per monthly report, YYYY-MM.md
+        2026-07.md
+      quarterly/
+        2026-Q3.md         # quarterly refresh outputs
+```
+
+The monthly workflow finds "last month" mechanically: the lexically previous `YYYY-MM.md` in `reports/`. The Section 3 accountability loop reads that file's Section 6 — no memory, no guessing, no asking the operator. If the prior report file is missing, say so explicitly in the report rather than fabricating a Section 3.
+
 ## Repo conventions
 
 - `methodology/`: stable operating rules.

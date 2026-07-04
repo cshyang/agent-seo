@@ -1,7 +1,7 @@
 ---
 name: seo-report-generation
 description: "Generate client-facing SME SEO/GEO monthly reports using fixed money keywords, GA4 enquiry events, GSC query data, DataForSEO rank/SERP/GEO data, and one-diagnosis discipline."
-version: 0.1.1
+version: 0.2.0
 tags: [seo, geo, reporting, gsc, ga4, dataforseo]
 ---
 
@@ -11,10 +11,19 @@ tags: [seo, geo, reporting, gsc, ga4, dataforseo]
 
 Use when producing a monthly SEO/GEO report, preparing a client-facing SEO summary, or grading previous SEO actions.
 
+## Required reading (before generating anything)
+
+This repo is the unit of operation: run from the repo root. Read these canonical files — do not improvise report structure from this SKILL.md alone:
+
+1. `templates/sme-seo-report-template-v1.2.md` — the full report spec, section by section, including all `>> GEN:` generation instructions. This is the source of truth for structure, thresholds, and data-source rules.
+2. `templates/report-qa-checklist.md` — pre-delivery checklist.
+3. `methodology/dataforseo-cost-control.md` — which pulls are monthly vs quarterly.
+4. The client's config and prior report from `.seo-ops/clients/<slug>/` (see AGENTS.md state convention).
+
 ## Inputs
 
 - Client config matching `schemas/client-config.schema.json`.
-- Previous report Section 6 actions.
+- Previous report Section 6 actions, read from `.seo-ops/clients/<slug>/reports/<prior YYYY-MM>.md`.
 - Current full calendar month data.
 - Prior full calendar month data.
 - Money keyword rank/SERP data from DataForSEO.
@@ -42,6 +51,10 @@ Use when producing a monthly SEO/GEO report, preparing a client-facing SEO summa
 - Label low-confidence data clearly.
 - Separate branded demand from non-brand commercial SEO demand.
 - Treat sampled AI/GEO visibility as directional.
+
+## Output location
+
+Write the finished client-facing report to `.seo-ops/clients/<slug>/reports/YYYY-MM.md` (gitignored). Never write real client reports into the repo tree.
 
 ## Verification
 

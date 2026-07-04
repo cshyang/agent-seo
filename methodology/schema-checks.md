@@ -1,5 +1,7 @@
 # Schema Checks
 
+> Last verified: 2026-07-05. Schema deprecations change — re-verify quarterly against Google documentation and upstream deprecated-types references.
+
 Schema work is an implementation aid. It should support search understanding, eligibility, entity clarity, and AI/citation quality — not create busywork.
 
 ## Validation checklist

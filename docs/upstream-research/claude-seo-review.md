@@ -2,7 +2,9 @@
 
 Source: https://github.com/AgriciDaniel/claude-seo  
 License: MIT  
-Reviewed for: agent-seo operator-side SEO/GEO engine
+Reviewed for: agent-seo operator-side SEO/GEO engine  
+Upstream version reviewed: `<FILL: release tag or commit hash you reviewed, e.g. v2.2.0>` — required anchor for future quarterly diffs  
+Next quarterly upstream check due: 2026-10
 
 ## Decision
 

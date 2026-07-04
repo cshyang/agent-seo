@@ -1,5 +1,7 @@
 # GEO / AI Citability Checks
 
+> Last verified: 2026-07-05. Crawler tokens and llms.txt guidance rot fast — re-verify quarterly against upstream and primary sources.
+
 GEO work should produce concrete source, content, or entity actions — not vague advice to "improve AI visibility."
 
 ## Checks

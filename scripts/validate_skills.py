@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+PATH_REF_RE = re.compile(r"`((?:templates|schemas|scripts|methodology|workflows)/[A-Za-z0-9._/-]+)`")
 
 try:
     import yaml  # type: ignore
@@ -33,6 +37,21 @@ def validate_skill(path: Path) -> list[str]:
     description = str(data.get("description", ""))
     if len(description) > 1024:
         errors.append("description exceeds 1024 characters")
+
+    # Referenced repo paths must exist (skills are repo-resident; see AGENTS.md).
+    for ref in sorted(set(PATH_REF_RE.findall(text))):
+        if not (REPO_ROOT / ref).exists():
+            errors.append(f"references missing repo path: {ref}")
+    return errors
+
+
+def check_no_duplicate_templates() -> list[str]:
+    """Templates live only in templates/ — skill folders must not carry copies."""
+    errors: list[str] = []
+    canonical = {f.name for f in (REPO_ROOT / "templates").glob("*.md")}
+    for path in (REPO_ROOT / "skills").rglob("*.md"):
+        if path.name != "SKILL.md" and path.name in canonical:
+            errors.append(f"duplicate of canonical template: {path.relative_to(REPO_ROOT)}")
     return errors
 
 
@@ -49,6 +68,9 @@ def main() -> int:
             skill_files.extend(path.rglob("SKILL.md"))
 
     failed = False
+    for error in check_no_duplicate_templates():
+        failed = True
+        print(f"Repo invalid: {error}")
     for skill in sorted(skill_files):
         errors = validate_skill(skill)
         if errors:
