@@ -1,7 +1,7 @@
 ---
 name: wordpress-seo-implementation
 description: "Turn SEO report actions into safe WordPress implementation tasks: metadata, schema, internal links, target page fixes, content briefs, and rendered verification."
-version: 0.1.2
+version: 0.1.3
 tags: [seo, wordpress, implementation, metadata, schema]
 ---
 
@@ -24,7 +24,7 @@ Use when a report action requires inspection or changes inside a WordPress site.
 - Check target URL content and metadata.
 - Fix title/meta/canonical/schema issues.
 - Add internal links to money keyword target pages.
-- Prepare draft content briefs.
+- Prepare draft content briefs via the seo-content-briefs skill (`templates/content-brief-template.md` — demand-validated only).
 - Export page inventory for reporting workflows.
 - Apply schema checks from `methodology/schema-checks.md` before recommending new JSON-LD.
 

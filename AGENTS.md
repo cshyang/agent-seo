@@ -37,6 +37,8 @@ Real client state lives in `.seo-ops/` at the repo root (gitignored), one folder
         2026-Q3.md         # quarterly refresh outputs
       audits/
         2026-07-audit.md   # one-off site audits (onboarding, prospect, re-baseline)
+      briefs/
+        2026-07-topic.md   # content briefs and drafts, one per validated topic
 ```
 
 The monthly workflow finds "last month" mechanically: the lexically previous `YYYY-MM.md` in `reports/`. The Section 3 accountability loop reads that file's Section 6 — no memory, no guessing, no asking the operator. If the prior report file is missing, say so explicitly in the report rather than fabricating a Section 3.

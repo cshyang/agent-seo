@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from qa_report import PLACEHOLDER_RE, _count_table_rows, _section
+from qa_report import _count_table_rows, _section, find_placeholders
 
 PRIORITIES = ("P0", "P1", "P2")
 
@@ -17,7 +17,7 @@ def qa_audit(path: Path, *, template: bool = False) -> list[str]:
     if not template:
         if ">> GEN" in text:
             errors.append("Client-facing audit still contains generation instructions")
-        placeholders = sorted(set(PLACEHOLDER_RE.findall(text)))
+        placeholders = find_placeholders(text)
         if placeholders:
             errors.append("Unresolved placeholders: " + ", ".join(placeholders[:20]))
 

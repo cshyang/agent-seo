@@ -77,6 +77,12 @@ Check a generated site audit before delivery:
 python scripts/qa_audit.py templates/site-audit-template.md --template
 ```
 
+Check a content brief before handoff:
+
+```bash
+python scripts/qa_brief.py templates/content-brief-template.md --template
+```
+
 Validate skill frontmatter:
 
 ```bash

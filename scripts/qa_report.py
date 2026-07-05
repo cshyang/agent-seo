@@ -6,7 +6,12 @@ import argparse
 import re
 from pathlib import Path
 
-PLACEHOLDER_RE = re.compile(r"\[[A-Z0-9_ /.-]+\]")
+PLACEHOLDER_RE = re.compile(r"\[[A-Z0-9_/.-][A-Z0-9_ /.-]*\]")
+
+
+def find_placeholders(text: str) -> list[str]:
+    """Unresolved [FIELD] placeholders, excluding markdown checkboxes."""
+    return sorted(set(PLACEHOLDER_RE.findall(text)) - {"[X]"})
 
 
 def qa_report(path: Path, *, template: bool = False) -> list[str]:
@@ -17,7 +22,7 @@ def qa_report(path: Path, *, template: bool = False) -> list[str]:
         errors.append("Client-facing report still contains >> GEN instructions")
 
     if not template:
-        placeholders = sorted(set(PLACEHOLDER_RE.findall(text)))
+        placeholders = find_placeholders(text)
         if placeholders:
             errors.append("Unresolved placeholders: " + ", ".join(placeholders[:20]))
 
