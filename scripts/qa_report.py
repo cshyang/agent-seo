@@ -27,6 +27,12 @@ def qa_report(path: Path, *, template: bool = False) -> list[str]:
     if "## 2. Scorecard" not in text and not template:
         errors.append("Missing Section 2 Scorecard")
 
+    if "## 3." not in text and not template:
+        errors.append("Missing Section 3 accountability loop (last month's actions)")
+
+    if not template and "Data confidence" not in text:
+        errors.append("Missing data confidence label (High/Medium/Low with a reason)")
+
     if not template and text.count("## 5. Diagnosis") > 1:
         errors.append("Report appears to contain more than one diagnosis section")
 
@@ -34,12 +40,16 @@ def qa_report(path: Path, *, template: bool = False) -> list[str]:
         action_rows = _count_table_rows(_section(text, "## 6."))
         if action_rows > 3:
             errors.append(f"Section 6 has {action_rows} actions; maximum is 3")
-        if "## 6." in text and action_rows == 0:
-            errors.append("Section 6 has no actions")
+        if "## 6." in text and action_rows < 2:
+            errors.append(f"Section 6 has {action_rows} action(s); rule is 2-3")
 
         scorecard_rows = _count_table_rows(_section(text, "## 2."))
         if scorecard_rows > 7:
             errors.append(f"Section 2 scorecard has {scorecard_rows} rows; maximum is 7")
+
+        opportunity_rows = _count_table_rows(_section(text, "## 7."))
+        if opportunity_rows > 5:
+            errors.append(f"Section 7 has {opportunity_rows} opportunity rows; maximum is 5")
 
         if "## 8." not in text:
             errors.append("Missing Section 8 AI/GEO visibility")

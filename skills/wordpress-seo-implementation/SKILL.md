@@ -1,7 +1,7 @@
 ---
 name: wordpress-seo-implementation
 description: "Turn SEO report actions into safe WordPress implementation tasks: metadata, schema, internal links, target page fixes, content briefs, and rendered verification."
-version: 0.1.1
+version: 0.1.2
 tags: [seo, wordpress, implementation, metadata, schema]
 ---
 
@@ -13,6 +13,7 @@ Use when a report action requires inspection or changes inside a WordPress site.
 
 ## Operating rules
 
+- Structure each task with `workflows/implementation-handoff.md` (current/desired state, acceptance criteria, owner, rollback notes) before touching the site.
 - WordPress is an implementation adapter, not the reporting brain.
 - Do not store GSC/GA4/DataForSEO credentials in WordPress by default.
 - Propose customer-facing changes before applying unless explicitly approved.

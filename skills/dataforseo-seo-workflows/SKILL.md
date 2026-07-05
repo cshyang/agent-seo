@@ -1,7 +1,7 @@
 ---
 name: dataforseo-seo-workflows
 description: "Use DataForSEO for SME SEO/GEO rank tracking, SERP blocker detection, local pack checks, opportunity validation, AI visibility, and quarterly refreshes with cost controls."
-version: 0.1.1
+version: 0.1.2
 tags: [seo, dataforseo, serp, rank-tracking, geo, local-seo]
 ---
 
@@ -10,6 +10,10 @@ tags: [seo, dataforseo, serp, rank-tracking, geo, local-seo]
 ## When to use
 
 Use when a report or diagnostic needs stable rank/SERP data, search volume validation, local pack presence, AI/GEO visibility, or quarterly competitor/technical refreshes.
+
+## Required reading
+
+`methodology/dataforseo-cost-control.md` is the canonical version of the monthly/quarterly/avoid lists below — read it first; this skill is a summary and must not drift from it.
 
 ## Default monthly pulls
 
@@ -49,4 +53,5 @@ Prefer bulk endpoints over many single-keyword calls, and avoid re-fetching data
 - Backlinks API.
 - Content Generation API.
 - AI search volume as a headline metric.
+- Google Trends endpoints (seasonality notes in the client config suffice).
 - Unscheduled full-domain crawls.

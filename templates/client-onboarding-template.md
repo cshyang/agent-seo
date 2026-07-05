@@ -24,7 +24,14 @@
 
 - GSC property:
 - GA4 property ID:
-- GA4 key events:
+
+### GA4 key event mapping
+
+Weights feed the weighted enquiry formula; see the report template Section A3.
+
+| GA4 event | Report label | Value tier (High/Medium/Low) | Weight (0–1) |
+|-----------|--------------|------------------------------|--------------|
+| 1 | | | |
 
 ## Money keywords
 

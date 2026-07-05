@@ -22,8 +22,10 @@ Create a stable reporting baseline so month-to-month SEO/GEO reporting is compar
 
 ## Output
 
-- `client.yaml`
-- `money-keywords.csv` or embedded list
-- `geo-prompts.csv` or embedded list
-- GA4 event mapping
-- onboarding changelog entry
+A single client config matching `schemas/client-config.schema.json` — money keywords, GA4 event mapping, GEO prompts, and the onboarding changelog entry are all embedded in it — written to `.seo-ops/clients/<slug>/config.yaml` (gitignored; see the AGENTS.md client state convention).
+
+Validate before finishing:
+
+```bash
+python scripts/validate_client_config.py .seo-ops/clients/<slug>/config.yaml
+```

@@ -39,4 +39,5 @@ Every report should record:
 - Backlinks API
 - Content Generation API
 - AI Keyword Data / AI search volume
+- Google Trends endpoints (client-config seasonality notes suffice)
 - repeated full-domain crawls

@@ -1,7 +1,7 @@
 ---
 name: seo-report-generation
 description: "Generate client-facing SME SEO/GEO monthly reports using fixed money keywords, GA4 enquiry events, GSC query data, DataForSEO rank/SERP/GEO data, and one-diagnosis discipline."
-version: 0.2.0
+version: 0.2.1
 tags: [seo, geo, reporting, gsc, ga4, dataforseo]
 ---
 
@@ -51,6 +51,14 @@ This repo is the unit of operation: run from the repo root. Read these canonical
 - Label low-confidence data clearly.
 - Separate branded demand from non-brand commercial SEO demand.
 - Treat sampled AI/GEO visibility as directional.
+
+## Deterministic helpers
+
+For the brand/non-brand split (Section 2 non-brand commercial clicks, Appendix A query tagging), classify the GSC export deterministically and review the output:
+
+```bash
+python scripts/classify_gsc_queries.py <gsc-export.csv> --brand-term <brand term>
+```
 
 ## Output location
 

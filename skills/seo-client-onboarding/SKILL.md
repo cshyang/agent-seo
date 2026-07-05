@@ -1,7 +1,7 @@
 ---
 name: seo-client-onboarding
 description: "Establish stable client SEO/GEO reporting baselines: profile, goals, brand terms, lead quality, money keywords, GA4 events, local intent, competitors, and AI prompt panel."
-version: 0.2.0
+version: 0.2.1
 tags: [seo, onboarding, reporting, client-config]
 ---
 
@@ -32,7 +32,9 @@ Run from the repo root and read these canonical files first:
 9. Define local intent level.
 10. Choose local competitors.
 11. Define fixed GEO/AI prompt panel.
-12. Record changelog.
+12. Run cold-start backfill: 12 months of historical rank/visibility (DataForSEO Labs Historical Rank Overview) so the first report shows a trend line, not a snapshot.
+13. Record baseline local pack presence for each money keyword where local intent is high or medium.
+14. Record changelog.
 
 ## Output
 

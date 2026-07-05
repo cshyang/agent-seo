@@ -1,7 +1,7 @@
 ---
 name: external-seo-enrichment
 description: "Use optional external SEO enrichment sources such as Common Crawl and Moz for source discovery, authority context, GEO citation research, and backlink sanity checks without turning them into default monthly KPIs."
-version: 0.1.0
+version: 0.1.1
 tags: [seo, backlinks, commoncrawl, moz, enrichment, geo]
 ---
 
@@ -14,6 +14,8 @@ Use when GSC/GA4/DataForSEO do not answer a source-discovery or authority-contex
 ## Source hierarchy
 
 Core monthly truth remains GSC, GA4, DataForSEO, and client lead-quality feedback. Common Crawl and Moz are enrichment sources only.
+
+`methodology/external-enrichment.md` is the canonical version of these rules — read it first; it also covers Bing Webmaster, Ahrefs, Semrush, directory checks, and other third-party sources. This skill is a summary and must not drift from it.
 
 ## Common Crawl
 
