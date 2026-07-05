@@ -65,6 +65,18 @@ Estimate a DataForSEO run before adding API spend:
 python scripts/dataforseo_cost_estimate.py estimate serp_google_organic_live_advanced --count 20
 ```
 
+Run deterministic site-audit pre-checks (robots.txt, sitemap, llms.txt, homepage metadata/JSON-LD):
+
+```bash
+python scripts/audit_site_checks.py https://www.example.com
+```
+
+Check a generated site audit before delivery:
+
+```bash
+python scripts/qa_audit.py templates/site-audit-template.md --template
+```
+
 Validate skill frontmatter:
 
 ```bash
