@@ -24,6 +24,7 @@
 
 - GSC property:
 - GA4 property ID:
+- Bing Webmaster Tools: verified / pending (sitemap submitted: yes/no · IndexNow: yes/no/unsupported)
 
 ### GA4 key event mapping
 

@@ -72,9 +72,9 @@ Domain: `[DOMAIN]` · Prepared by `[YOUR_NAME]` · `[DATE]` · Scope: `[full sit
 ---
 
 ## 7. GEO / AI citability
-`[AI crawler access per robots.txt, llms.txt status, server-rendered vs client-only content, citability of priority pages, presence on sources AI answers cite.]`
+`[AI crawler access per robots.txt, Bing index coverage, llms.txt status, server-rendered vs client-only content, citability of priority pages, presence on sources AI answers cite.]`
 
->> GEN: Apply `methodology/geo-ai-citability.md` — check the listed crawler tokens, distinguish blocking training crawlers from blocking search/answer visibility, and assess whether priority pages have self-contained answer blocks, dates, authorship, and entity clarity. Findings must translate to the concrete action types in that methodology's output discipline — never "improve AI visibility."
+>> GEN: Apply `methodology/geo-ai-citability.md` — check the listed crawler tokens, distinguish blocking training crawlers from blocking search/answer visibility, and assess whether priority pages have self-contained answer blocks, dates, authorship, and entity clarity. Check Bing indexation explicitly (Bing Webmaster Tools coverage, or a site: spot check for money pages): the Bing index gates ChatGPT/Copilot citation, and Google indexation says nothing about it. A money page missing from Bing is a finding. Findings must translate to the concrete action types in that methodology's output discipline — never "improve AI visibility."
 
 ---
 

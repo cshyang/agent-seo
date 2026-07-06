@@ -24,9 +24,11 @@ from url_safety import URLSafetyError, validate_url
 USER_AGENT = "agent-seo-audit/0.1 (+https://github.com/cshyang/agent-seo)"
 
 # Keep in sync with methodology/geo-ai-citability.md.
+# Blocking a search/answer-retrieval crawler removes the site from that answer
+# engine entirely (OAI-SearchBot gates ChatGPT Search even when Bing ranks the
+# page), so those blocks are FAIL. Training-crawler blocks are a choice: WARN.
 AI_CRAWLER_TOKENS = [
     "GPTBot",
-    "OAI-SearchBot",
     "ChatGPT-User",
     "ClaudeBot",
     "Claude-SearchBot",
@@ -34,7 +36,7 @@ AI_CRAWLER_TOKENS = [
     "Google-Extended",
     "CCBot",
 ]
-SEARCH_CRAWLER_TOKENS = ["Googlebot", "Bingbot"]
+SEARCH_CRAWLER_TOKENS = ["Googlebot", "Bingbot", "OAI-SearchBot"]
 
 TITLE_RE = re.compile(r"<title[^>]*>(.*?)</title>", re.IGNORECASE | re.DOTALL)
 META_RE = re.compile(
