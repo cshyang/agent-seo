@@ -46,7 +46,9 @@ For raw API envelopes, normalize items before handing them to an agent:
 python scripts/dataforseo_normalize.py response.json --max-chars 12000
 ```
 
-Prefer bulk endpoints over many single-keyword calls, and avoid re-fetching data already pulled in the same report run.
+Prefer bulk endpoints over many single-keyword calls where the endpoint supports bulk, and avoid re-fetching data already pulled in the same report run.
+
+Pitfall: `serp/google/organic/live/advanced` accepts only one live SERP task per request; if you POST an array of many keywords, DataForSEO may execute the first task and return `40000 You can set only one task at a time` for the rest. Loop one keyword per request, cache each raw envelope, then combine results for reporting. Google Ads search-volume endpoints can batch keyword lists.
 
 ## Avoid by default
 

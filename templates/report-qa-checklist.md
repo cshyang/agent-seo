@@ -19,3 +19,13 @@ Run before client delivery.
 - [ ] Client/developer/access blockers are explicit.
 - [ ] AI/GEO visibility labeled directional, not exact market share.
 - [ ] DataForSEO task count / estimated cost recorded.
+- [ ] Every fixed money keyword appears exactly once in the detailed tracker.
+- [ ] Every keyword includes rank/status, GSC evidence where available, actual page, target page, correct-page status and SERP/local-pack fields or an explicit missing-data marker.
+- [ ] Local-pack presence and client inclusion are separate fields.
+- [ ] GEO prompt coverage is reported by platform, or AI recommendation coverage is explicitly labeled not measured.
+- [ ] GEO panel has >=10 language-tagged prompts across >=3 engines (ChatGPT, Gemini, Perplexity), or coverage is explicitly labeled "insufficient panel - directional only".
+- [ ] Section 8 coverage matrix reports per engine x language, never blended.
+- [ ] Section 8 lists the third-party source domains shaping AI answers; every absent-from domain maps to a Section 6 action.
+- [ ] No AI referral traffic is forecast anywhere in the report.
+- [ ] Technical/on-page evidence and methodology are present.
+- [ ] A Gmail-safe version changes layout only; it does not replace the detailed tracker with keyword names.
