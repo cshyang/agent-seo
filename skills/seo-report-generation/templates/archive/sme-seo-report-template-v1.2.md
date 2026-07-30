@@ -236,3 +236,7 @@ Run this before client delivery.
 - [ ] AI/GEO visibility is labeled directional, not exact market share.
 - [ ] DataForSEO quarterly jobs only ran in scheduled quarter months unless explicitly requested.
 - [ ] Appendix F records DataForSEO task count / estimated cost and any missing data sources.
+- [ ] Every fixed money keyword appears exactly once with rank/status, GSC evidence where available, actual page, target page, correct-page status and SERP/local-pack fields or an explicit missing-data marker.
+- [ ] Local-pack presence and client inclusion are separate fields.
+- [ ] GEO prompt coverage is present by platform, or AI recommendation coverage is explicitly labeled not measured.
+- [ ] A Gmail-safe report preserves this analytical coverage using narrow tables or stacked detail blocks; it does not downgrade to a keyword-name list.

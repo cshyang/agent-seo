@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sommerfield Homes SEO & Local Search Audit — 21 July 2026</title>
+<style>
+:root {
+  --green:#6DAB3C; --green-dark:#335f23; --green-pale:#eef7e8; --mint:#75D69C;
+  --ink:#222a25; --muted:#637068; --line:#dce5de; --paper:#ffffff; --wash:#f5f8f5;
+  --amber:#b7791f; --amber-bg:#fff7e6; --red:#a63a3a; --red-bg:#fff1f1; --blue:#365f9c;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--ink); background:#edf2ee; font-family:Inter,Roboto,Arial,sans-serif; line-height:1.55; }
+a { color:var(--green-dark); }
+.report { max-width:1120px; margin:28px auto; background:var(--paper); box-shadow:0 18px 60px rgba(33,55,39,.12); }
+.cover { min-height:540px; padding:54px 64px 50px; color:white; position:relative; overflow:hidden; background:linear-gradient(135deg,#244f22 0%,#5b9636 68%,#83bd54 100%); }
+.cover:after { content:""; position:absolute; width:520px; height:520px; border:1px solid rgba(255,255,255,.18); border-radius:50%; right:-190px; top:-155px; box-shadow:0 0 0 60px rgba(255,255,255,.05),0 0 0 120px rgba(255,255,255,.035); }
+.brand-row { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; position:relative; z-index:1; }
+.logo { width:210px; max-height:94px; object-fit:contain; object-position:left center; padding:12px 16px; background:white; border-radius:10px; }
+.wordmark { font-size:24px; font-weight:800; }
+.cover-tag { font-size:12px; text-transform:uppercase; letter-spacing:.14em; border:1px solid rgba(255,255,255,.42); padding:7px 11px; border-radius:99px; }
+.cover h1 { max-width:760px; margin:100px 0 18px; font-size:56px; line-height:1.05; letter-spacing:-.04em; position:relative; z-index:1; }
+.cover p { max-width:730px; margin:0; font-size:19px; color:rgba(255,255,255,.88); position:relative; z-index:1; }
+.cover-meta { display:flex; gap:30px; margin-top:55px; font-size:14px; position:relative; z-index:1; }
+.cover-meta span { padding-top:10px; border-top:1px solid rgba(255,255,255,.35); min-width:170px; }
+.nav { position:sticky; top:0; z-index:5; display:flex; flex-wrap:wrap; gap:7px; padding:12px 40px; background:rgba(255,255,255,.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+.nav a { font-size:12px; text-decoration:none; padding:6px 10px; border-radius:99px; color:#435047; background:var(--wash); }
+.nav a:hover { background:var(--green-pale); color:var(--green-dark); }
+main { padding:18px 64px 70px; }
+section { padding:55px 0 20px; scroll-margin-top:56px; }
+.section-kicker { color:var(--green-dark); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; }
+h2 { font-size:36px; line-height:1.15; letter-spacing:-.025em; margin:8px 0 16px; }
+h3 { font-size:21px; line-height:1.3; margin:26px 0 8px; }
+p.lead { max-width:870px; font-size:18px; color:#49574e; }
+.grid { display:grid; gap:16px; }
+.grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.metric { padding:22px; border:1px solid var(--line); border-radius:12px; background:linear-gradient(180deg,#fff,var(--wash)); }
+.metric .value { font-size:32px; line-height:1; font-weight:850; letter-spacing:-.03em; }
+.metric .label { margin-top:8px; font-size:13px; color:var(--muted); }
+.metric .delta { display:inline-block; margin-top:10px; font-size:12px; font-weight:750; padding:4px 8px; border-radius:99px; background:var(--green-pale); color:var(--green-dark); }
+.metric .delta.down { background:var(--amber-bg); color:var(--amber); }
+.callout { margin:20px 0; padding:20px 22px; border-left:5px solid var(--green); background:var(--green-pale); border-radius:0 10px 10px 0; }
+.callout strong { display:block; margin-bottom:5px; }
+.callout.warning { border-color:var(--amber); background:var(--amber-bg); }
+.callout.risk { border-color:var(--red); background:var(--red-bg); }
+.card { border:1px solid var(--line); border-radius:12px; padding:24px; background:white; }
+.card h3 { margin-top:0; }
+.badge { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.07em; padding:4px 8px; border-radius:5px; background:var(--green-pale); color:var(--green-dark); }
+.badge.amber { background:var(--amber-bg); color:var(--amber); }
+.badge.red { background:var(--red-bg); color:var(--red); }
+ul.clean { list-style:none; margin:12px 0 0; padding:0; }
+ul.clean li { position:relative; padding:8px 0 8px 24px; border-bottom:1px solid #edf1ee; }
+ul.clean li:last-child { border-bottom:0; }
+ul.clean li:before { content:"✓"; color:var(--green); font-weight:900; position:absolute; left:0; }
+table { width:100%; border-collapse:collapse; margin:18px 0 24px; font-size:13px; }
+th { text-align:left; padding:11px 10px; color:#48554c; background:var(--wash); border-bottom:2px solid var(--line); vertical-align:bottom; }
+td { padding:11px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tbody tr:hover { background:#fbfdfb; }
+.sub { display:block; color:var(--muted); font-size:11px; margin-top:2px; }
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; }
+.table-wrap table { margin:0; min-width:780px; }
+.table-wrap th:first-child,.table-wrap td:first-child { padding-left:16px; }
+.funnel { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:24px 0; }
+.funnel div { padding:18px 10px; text-align:center; background:var(--wash); border-radius:8px; font-size:13px; position:relative; }
+.funnel strong { display:block; color:var(--green-dark); font-size:15px; }
+.funnel div:not(:last-child):after { content:"→"; position:absolute; right:-11px; top:25px; color:var(--green); font-weight:900; z-index:1; }
+.phase { display:grid; grid-template-columns:120px 1fr; gap:22px; padding:22px 0; border-top:1px solid var(--line); }
+.phase-time { color:var(--green-dark); font-size:13px; font-weight:800; }
+.phase h3 { margin:0 0 7px; }
+.score-line { display:flex; align-items:center; gap:13px; margin:11px 0; }
+.score-line .bar { flex:1; height:9px; background:#e8eee9; border-radius:99px; overflow:hidden; }
+.score-line .fill { height:100%; background:linear-gradient(90deg,var(--green-dark),var(--mint)); border-radius:99px; }
+.score-line .name { width:165px; font-size:13px; }
+.score-line .num { width:45px; text-align:right; font-weight:800; }
+.footnotes { font-size:12px; color:var(--muted); padding-top:20px; border-top:1px solid var(--line); }
+footer { padding:28px 64px; color:#e6f0e7; background:#263d2a; font-size:12px; display:flex; justify-content:space-between; gap:20px; }
+@media(max-width:850px) {
+ .report { margin:0; } .cover { padding:34px 24px; min-height:500px; } .cover h1 { font-size:42px; margin-top:80px; } main { padding:10px 24px 50px; } .nav { padding:10px 18px; }
+ .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .funnel { grid-template-columns:1fr; } .funnel div:after { display:none; } .phase { grid-template-columns:1fr; gap:5px; } footer { padding:26px 24px; }
+}
+@media print {
+ body { background:white; } .report { margin:0; max-width:none; box-shadow:none; } .nav { display:none; } section { page-break-inside:avoid; } .cover { min-height:95vh; } a { color:inherit; text-decoration:none; }
+}
+</style>
+</head>
+<body>
+<div class="report">
+<header class="cover">
+  <div class="brand-row"><img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4AAABlCAYAAABtEgn4AAAACXBIWXMAAAsTAAALEwEAmpwYAAANvWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIyLTA1LTMxVDE5OjA5OjQ1KzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMi0wNi0wMVQwNzo1MzoyOCswODowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMi0wNi0wMVQwNzo1MzoyOCswODowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3NzhhODhjOS00MGU2LTA3NDMtOTc1MS00MDU5ZjcwMjZkZDciIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo0OThmNTdkNS0xNTlhLWU5NDAtODdiOS0zNDhmZDkwM2VjYjIiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowZTYxZTUyMi0wN2I5LWFiNDMtYWZhYS0zYTU1NzBhMzc5ZGUiIHRpZmY6T3JpZW50YXRpb249IjEiIHRpZmY6WFJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpZUmVzb2x1dGlvbj0iNzIwMDAwLzEwMDAwIiB0aWZmOlJlc29sdXRpb25Vbml0PSIyIiBleGlmOkNvbG9yU3BhY2U9IjEiIGV4aWY6UGl4ZWxYRGltZW5zaW9uPSIzNjYiIGV4aWY6UGl4ZWxZRGltZW5zaW9uPSIxMDEiPiA8cGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPiA8cmRmOkJhZz4gPHJkZjpsaT5hZG9iZTpkb2NpZDpwaG90b3Nob3A6MDRmNjMwMjUtNDllYi0xZTQzLThjMmEtYzVhYmJjYjVmZDNlPC9yZGY6bGk+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6RG9jdW1lbnRBbmNlc3RvcnM+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MGU2MWU1MjItMDdiOS1hYjQzLWFmYWEtM2E1NTcwYTM3OWRlIiBzdEV2dDp3aGVuPSIyMDIyLTA1LTMxVDE5OjA5OjQ1KzA4OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjg1NDYwNWM0LTdmYTctODM0OC1hYjYyLWEyZmUzYTQzYzU0MCIgc3RFdnQ6d2hlbj0iMjAyMi0wNS0zMVQxOTo0NzoyMyswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NGMwMWFiMS04NDcwLThjNGMtOTVkMy1iYzI1Yjc4MDE1MjAiIHN0RXZ0OndoZW49IjIwMjItMDYtMDFUMDc6MjE6NDkrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY29udmVydGVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJmcm9tIGltYWdlL3BuZyB0byBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJkZXJpdmVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJjb252ZXJ0ZWQgZnJvbSBpbWFnZS9wbmcgdG8gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NzRmZGMzYTUtNGYzNS0wYjQyLWJiZTctYmM2OTliZDdhNjExIiBzdEV2dDp3aGVuPSIyMDIyLTA2LTAxVDA3OjIxOjQ5KzA4OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmI0NTM5NmUwLTUwNGItMGQ0My05MjYwLTQwOTUwMWQzNTFkYiIgc3RFdnQ6d2hlbj0iMjAyMi0wNi0wMVQwNzo1MzoyOCswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjb252ZXJ0ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImZyb20gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImRlcml2ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImNvbnZlcnRlZCBmcm9tIGFwcGxpY2F0aW9uL3ZuZC5hZG9iZS5waG90b3Nob3AgdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NzhhODhjOS00MGU2LTA3NDMtOTc1MS00MDU5ZjcwMjZkZDciIHN0RXZ0OndoZW49IjIwMjItMDYtMDFUMDc6NTM6MjgrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6YjQ1Mzk2ZTAtNTA0Yi0wZDQzLTkyNjAtNDA5NTAxZDM1MWRiIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MDRmNjMwMjUtNDllYi0xZTQzLThjMmEtYzVhYmJjYjVmZDNlIiBzdFJlZjpvcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MGU2MWU1MjItMDdiOS1hYjQzLWFmYWEtM2E1NTcwYTM3OWRlIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+hnFM1AAANKxJREFUeJztnXd0FFUb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" alt="Sommerfield Homes"><span class="cover-tag">Confidential client report</span></div>
+  <h1>SEO &amp; Local Search Audit</h1>
+  <p>Commercial search visibility, English and Chinese discovery, location ownership and measurement readiness for Sommerfield Homes.</p>
+  <div class="cover-meta"><span><strong>Website</strong><br>sommerfieldhomes.com</span><span><strong>Locations</strong><br>Bangsar &amp; Cheras</span><span><strong>Audit date</strong><br>21 July 2026</span></div>
+</header>
+<nav class="nav">
+  <a href="#summary">Executive summary</a><a href="#performance">Performance</a><a href="#locations">Locations</a><a href="#chinese">Chinese SEO</a><a href="#geo">AI visibility</a><a href="#technical">Site quality</a><a href="#measurement">Measurement</a><a href="#roadmap">Roadmap</a>
+</nav>
+<main>
+<section id="summary">
+  <div class="section-kicker">Executive summary</div>
+  <h2>Sommerfield has local authority. The website is not converting that authority into a clean location-and-language growth system.</h2>
+  <p class="lead">Cheras is already competitive in Google’s organic and map results, while Bangsar has meaningful local-pack visibility. The next phase should not begin with generic blog production. It should establish dedicated facility pages, recover the existing Chinese site’s indexation, remove legacy sibling-brand content, and make enquiries measurable.</p>
+  <div class="grid grid-4">
+    <div class="metric"><div class="value">410</div><div class="label">Google organic clicks, latest 90 days</div><span class="delta down">-5.5%</span></div>
+    <div class="metric"><div class="value">18,503</div><div class="label">Google search impressions</div><span class="delta down">-24.8%</span></div>
+    <div class="metric"><div class="value">2.22%</div><div class="label">Google organic CTR</div><span class="delta">+0.45 points</span></div>
+    <div class="metric"><div class="value">487</div><div class="label">GA4 organic sessions</div><span class="delta down">-7.6%</span></div>
+  </div>
+  <div class="callout"><strong>Recommended direction</strong>Prioritize commercial location pages and measurement before increasing content volume: Cheras first, Bangsar second, then Chinese indexation and service-intent expansion.</div>
+  <div class="grid grid-3">
+    <div class="card"><span class="badge">Protect</span><h3>Cheras visibility</h3><p>Sommerfield appears in the Cheras local pack and ranks organically for high-intent terms, but Google mainly sends users to the homepage.</p></div>
+    <div class="card"><span class="badge amber">Build</span><h3>Facility ownership</h3><p>One gallery-heavy Our Homes page currently carries both locations. Each facility needs its own commercial owner page and matching GBP destination.</p></div>
+    <div class="card"><span class="badge red">Repair</span><h3>Chinese discovery</h3><p>Crawlable Chinese pages exist, but the priority URLs inspected were unknown to Google and generated no disclosed GSC visibility.</p></div>
+  </div>
+</section>
+
+<section id="performance">
+  <div class="section-kicker">Organic performance</div>
+  <h2>Traffic softened, but the remaining visibility became more efficient.</h2>
+  <p class="lead">The comparison is not a simple CTR failure. Search visibility and average position weakened, while CTR improved. This points to reduced query coverage and ranking breadth rather than universally poorer snippets.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Metric</th><th>20 Apr–18 Jul 2026</th><th>20 Jan–19 Apr 2026</th><th>Movement</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td>Google organic clicks</td><td>410</td><td>434</td><td>-5.5%</td><td>Modest decline</td></tr>
+      <tr><td>Google impressions</td><td>18,503</td><td>24,592</td><td>-24.8%</td><td>Material visibility contraction</td></tr>
+      <tr><td>Organic CTR</td><td>2.22%</td><td>1.76%</td><td>+0.45 points</td><td>Stronger click efficiency</td></tr>
+      <tr><td>Average position</td><td>10.01</td><td>8.85</td><td>+1.16</td><td>Average ranking weakened</td></tr>
+      <tr><td>GA4 organic sessions</td><td>487</td><td>527</td><td>-7.6%</td><td>Consistent with GSC click trend</td></tr>
+      <tr><td>Engagement rate</td><td>70.6%</td><td>65.7%</td><td>+5.0 points</td><td>Visitors who arrived were more engaged</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warning"><strong>Commercial read</strong>Do not chase the lost impressions indiscriminately. Recover high-intent Kuala Lumpur, near-me and service visibility while protecting Cheras. Impression recovery is useful only if it creates genuine enquiries and facility visits.</div>
+</section>
+
+<section id="locations">
+  <div class="section-kicker">Location opportunity</div>
+  <h2>Cheras is the immediate growth page. Bangsar is the strategic second page.</h2>
+  <div class="grid grid-2">
+    <div class="card"><span class="badge">Priority 1</span><h3>Sommerfield Homes Cheras</h3>
+      <ul class="clean"><li><strong>nursing home cheras:</strong> organic #6; map pack #1; 5.0★ from 32 reviews</li><li><strong>old folks home cheras:</strong> map pack #2</li><li><strong>elderly care centre cheras:</strong> organic #4; map pack #3</li><li>Existing rankings point to the homepage instead of a Cheras owner page</li></ul>
+    </div>
+    <div class="card"><span class="badge amber">Priority 2</span><h3>Sommerfield Homes Bangsar</h3>
+      <ul class="clean"><li><strong>nursing home bangsar:</strong> organic #3</li><li>Map pack #3; 4.8★ from 24 reviews</li><li>Exact keyword volume is smaller or not reported, but live local visibility is proven</li><li>The facility still needs a unique page to support GBP and family decision-making</li></ul>
+    </div>
+  </div>
+  <h3>English commercial keyword panel</h3>
+  <div class="table-wrap"><table><thead><tr><th>Keyword</th><th>Malaysia monthly volume</th><th>Organic rank</th><th>Local result</th><th>Status</th></tr></thead><tbody>
+        <tr>
+          <td><strong>nursing home near me</strong><span class="sub">Core / near me</span></td>
+          <td>1,600</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Growth opportunity</td>
+        </tr>
+        <tr>
+          <td><strong>old folks home near me</strong><span class="sub">Core / near me</span></td>
+          <td>880</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Growth opportunity</td>
+        </tr>
+        <tr>
+          <td><strong>nursing home kuala lumpur</strong><span class="sub">Core / KL</span></td>
+          <td>320</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Growth opportunity</td>
+        </tr>
+        <tr>
+          <td><strong>elderly care centre near me</strong><span class="sub">Elderly care / near me</span></td>
+          <td>210</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Growth opportunity</td>
+        </tr>
+        <tr>
+          <td><strong>best nursing home in kuala lumpur</strong><span class="sub">Comparison / KL</span></td>
+          <td>Low / not reported</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Growth opportunity</td>
+        </tr>
+        <tr>
+          <td><strong>nursing home cheras</strong><span class="sub">Cheras facility</span></td>
+          <td>210</td>
+          <td>6</td>
+          <td>#1 · 5.0★ (32 reviews)</td>
+          <td>Existing strength</td>
+        </tr>
+        <tr>
+          <td><strong>old folks home cheras</strong><span class="sub">Cheras facility</span></td>
+          <td>140</td>
+          <td>&gt;100</td>
+          <td>#2 · 5.0★ (32 reviews)</td>
+          <td>Growth opportunity</td>
+        </tr>
+        <tr>
+          <td><strong>elderly care centre cheras</strong><span class="sub">Cheras facility</span></td>
+          <td>Low / not reported</td>
+          <td>4</td>
+          <td>#3 · 5.0★ (32 reviews)</td>
+          <td>Existing strength</td>
+        </tr>
+        <tr>
+          <td><strong>dementia care centres near me</strong><span class="sub">Dementia / near me</span></td>
+          <td>Low / not reported</td>
+          <td>21</td>
+          <td>#1 · 5.0★ (32 reviews)</td>
+          <td>Growth opportunity</td>
+        </tr>
+        <tr>
+          <td><strong>nursing home bangsar</strong><span class="sub">Bangsar facility / strategic</span></td>
+          <td>Low / not reported</td>
+          <td>3</td>
+          <td>#3 · 4.8★ (24 reviews)</td>
+          <td>Existing strength</td>
+        </tr></tbody></table></div>
+  <div class="callout"><strong>Page strategy</strong>The homepage should own broad Kuala Lumpur and “near me” positioning. Separate Cheras and Bangsar pages should own each facility’s location intent, reviews, room/facility proof, services, FAQs and visit CTA.</div>
+</section>
+
+<section id="chinese">
+  <div class="section-kicker">Chinese SEO</div>
+  <h2>The Chinese site exists. Its discovery and quality controls are failing.</h2>
+  <p class="lead">Sommerfield has Simplified Chinese pages with self-canonicals, <code>lang="zh-CN"</code> and reciprocal English/Chinese hreflang. That is a useful foundation. However, all 3 priority Chinese URLs inspected were reported by Google as “URL is unknown to Google,” and the Chinese prefix returned no disclosed GSC query or page performance.</p>
+  <div class="grid grid-3">
+    <div class="metric"><div class="value">19</div><div class="label">English/Chinese URL pairs checked</div><span class="delta">Technical parity present</span></div>
+    <div class="metric"><div class="value">3/3</div><div class="label">Priority Chinese URLs unknown to Google</div><span class="delta down">Indexation blocker</span></div>
+    <div class="metric"><div class="value">0</div><div class="label">Disclosed GSC impressions for /zh-CN/ pages</div><span class="delta down">No measurable search surface</span></div>
+  </div>
+  <h3>Chinese commercial keyword panel</h3>
+  <div class="table-wrap"><table><thead><tr><th>Keyword</th><th>Malaysia monthly volume</th><th>Organic rank</th><th>Local result</th><th>Status</th></tr></thead><tbody>
+        <tr>
+          <td><strong lang="zh-CN">附近老人院</strong><span class="sub">附近 / near me</span></td>
+          <td>90</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">cheras 老人院</strong><span class="sub">蕉赖 / Cheras mixed-language</span></td>
+          <td>70</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">蕉赖老人院</strong><span class="sub">蕉赖 / Cheras</span></td>
+          <td>Low / not reported</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">蕉賴老人院</strong><span class="sub">蕉賴 / Cheras traditional variant</span></td>
+          <td>Low / not reported</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">吉隆坡老人院</strong><span class="sub">吉隆坡 / KL</span></td>
+          <td>20</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">吉隆坡养老院</strong><span class="sub">吉隆坡 / KL</span></td>
+          <td>10</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">吉隆坡安老院</strong><span class="sub">吉隆坡 / KL traditional term</span></td>
+          <td>10</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">吉隆坡护理院</strong><span class="sub">护理 / nursing care</span></td>
+          <td>Low / not reported</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">孟沙老人院</strong><span class="sub">孟沙 / Bangsar strategic</span></td>
+          <td>Low / not reported</td>
+          <td>&gt;100</td>
+          <td>#3</td>
+          <td>Local visibility only</td>
+        </tr>
+        <tr>
+          <td><strong lang="zh-CN">附近养老院</strong><span class="sub">附近 / near me synonym</span></td>
+          <td>Low / not reported</td>
+          <td>&gt;100</td>
+          <td>Not present</td>
+          <td>Not visible</td>
+        </tr></tbody></table></div>
+  <div class="callout risk"><strong>Brand and translation quality risk</strong>Legacy Woodrose wording and Shah Alam details were found across Sommerfield pages, including Chinese equivalents. The Chinese homepage also contains a Woodrose-labelled dementia programme. Correct this before requesting broad indexation.</div>
+  <div class="grid grid-2">
+    <div class="card"><h3>Fix first</h3><ul class="clean"><li>Correct legacy brand and location references</li><li>Add Chinese URLs to the sitemap</li><li>Submit and validate the sitemap in GSC</li><li>Request indexation for the priority pages</li><li>Use a Malaysian Chinese-language reviewer</li></ul></div>
+    <div class="card"><h3>Initial Chinese owner pages</h3><ul class="clean"><li>Chinese homepage for KL / near-me intent</li><li>Chinese Cheras facility page</li><li>Chinese Bangsar facility page</li><li>Chinese services and admission page</li><li>Chinese visit and availability enquiry path</li></ul></div>
+  </div>
+</section>
+
+<section id="geo">
+  <div class="section-kicker">AI assistant visibility (GEO)</div>
+  <h2>Sommerfield surfaces in some AI answers, but coverage is thin and uneven across engines and languages.</h2>
+  <p class="lead">Across 36 localized prompts, Sommerfield was mentioned in 8 and cited (linked) in 2. AI assistants build these answers from third-party sources; being present in the domains listed below moves visibility more than on-site content.</p>
+  <div class="grid grid-3">
+    <div class="metric"><div class="value">8/36</div><div class="label">AI answers mentioning Sommerfield</div></div>
+    <div class="metric"><div class="value">2/36</div><div class="label">AI answers linking a Sommerfield page</div></div>
+    <div class="metric"><div class="value">2×3</div><div class="label">Languages × engines tracked, 36 prompts</div></div>
+  </div>
+  <h3>Coverage by engine and language</h3>
+  <div class="table-wrap"><table><thead><tr><th>Language</th><th>ChatGPT</th><th>Gemini</th><th>Perplexity</th></tr></thead><tbody><tr><td><strong>English</strong></td><td>2/6 mentioned<span class="sub">1 cited</span></td><td>1/6 mentioned</td><td>3/6 mentioned</td></tr><tr><td><strong>Chinese</strong></td><td>1/6 mentioned<span class="sub">1 cited</span></td><td>1/6 mentioned</td><td style="color:#637068">0/6 mentioned</td></tr></tbody></table></div>
+  <div class="grid grid-2">
+    <div class="card"><h3>Sources shaping AI answers</h3><p>Third-party domains the assistants cited for these searches. Getting listed and well-reviewed on these moves AI visibility more than on-site copy.</p><ul class="clean"><li>seniorlivingmalaysia.org<span class="sub">cited in 18 answers</span></li><li>jasperlodge.com.my<span class="sub">cited in 11 answers</span></li><li>mintygreen-wellness.com<span class="sub">cited in 11 answers</span></li><li>haywoodliving.co<span class="sub">cited in 10 answers</span></li><li>mycareconcierge.com<span class="sub">cited in 8 answers</span></li><li>egcc.com.my<span class="sub">cited in 6 answers</span></li><li>lecadia.com<span class="sub">cited in 6 answers</span></li><li>nursinghomeguide.my<span class="sub">cited in 5 answers</span></li></ul></div>
+    <div class="card"><h3>What this means</h3><ul class="clean"><li>AI visibility is a recommendation surface, not a traffic channel — treat it as brand presence in answers, not a click source</li><li>Absence in a language or engine maps to a concrete action: get listed on the source domains opposite</li><li>These are recommendation/citation signals, measured on a fixed panel so they can be tracked month over month</li></ul></div>
+  </div>
+  <div class="callout warning"><strong>How to read this</strong>Directional web-search sample localized to Kuala Lumpur, run 2026-07-21 on pinned models (ChatGPT (gpt-5.6-terra), Gemini (gemini-3.5-flash), Perplexity (sonar)). AI answers vary between users and over time; this is a stable, comparable baseline, not a guarantee of what any individual user sees. No AI referral traffic is forecast.</div>
+</section>
+
+<section id="technical">
+  <div class="section-kicker">Technical and content quality</div>
+  <h2>The site is crawlable, but legacy URLs and weak page signals dilute the commercial structure.</h2>
+  <div class="grid grid-4">
+    <div class="metric"><div class="value">19</div><div class="label">English HTML pages audited</div></div>
+    <div class="metric"><div class="value">13</div><div class="label">High-priority issues</div><span class="delta down">Action required</span></div>
+    <div class="metric"><div class="value">17</div><div class="label">Medium-priority issues</div></div>
+    <div class="metric"><div class="value">1</div><div class="label">Broken internal destination found</div></div>
+  </div>
+  <div class="grid grid-2">
+    <div class="card"><h3>Commercial page problems</h3><ul class="clean"><li>Homepage is missing an H1 and meta description</li><li>Our Services lacks a useful meta description and strong top-page service signals</li><li>Our Homes combines both facilities and relies heavily on galleries</li><li>Priority imagery has widespread missing alt text</li><li>No clear facility-level schema owner was detected</li></ul></div>
+    <div class="card"><h3>Legacy and duplication problems</h3><ul class="clean"><li><code>/our-home/</code> competes with <code>/our-homes/</code></li><li><code>/services/</code> competes with <code>/our-services/</code></li><li>Duplicate about and staging surfaces remain public</li><li>Thank-you and utility URLs appear in the sitemap</li><li>9 English and 6 Chinese pages contained visible Woodrose references</li></ul></div>
+  </div>
+  <div class="callout warning"><strong>Performance caveat</strong>Google’s PageSpeed API returned a quota error during this audit. No Core Web Vitals score is claimed in this report. A fresh Lighthouse/PageSpeed run should be included in implementation QA.</div>
+</section>
+
+<section id="measurement">
+  <div class="section-kicker">Measurement readiness</div>
+  <h2>Reported key events cannot yet be treated as genuine leads.</h2>
+  <p class="lead">GA4 records WhatsApp, form and phone interactions, but the form event appears to fire repeatedly. The current event increase is therefore not reliable evidence of enquiry growth.</p>
+  <div class="table-wrap"><table><thead><tr><th>Organic key event</th><th>Current events</th><th>Current users</th><th>Previous events</th><th>Previous users</th><th>Assessment</th></tr></thead><tbody>
+    <tr><td>WhatsApp click</td><td>22</td><td>21</td><td>39</td><td>32</td><td>Useful contact-action signal, not a confirmed enquiry</td></tr>
+    <tr><td>Form submit</td><td>29</td><td>3</td><td>7</td><td>6</td><td>Likely repeated trigger; requires QA</td></tr>
+    <tr><td>Phone click</td><td>3</td><td>2</td><td>2</td><td>2</td><td>Very low volume; confirm all numbers are tagged</td></tr>
+  </tbody></table></div>
+  <div class="funnel"><div><strong>Search visibility</strong>Impressions &amp; rankings</div><div><strong>Qualified session</strong>Right service &amp; location</div><div><strong>Genuine enquiry</strong>Call, form or WhatsApp conversation</div><div><strong>Facility visit</strong>Booked and attended</div><div><strong>Admission</strong>Commercial outcome</div></div>
+  <div class="callout"><strong>Target state</strong>Report SEO against genuine enquiries, completed visits and admissions by facility and language. Keep clicks and button events as diagnostic metrics rather than describing them as leads.</div>
+</section>
+
+<section id="roadmap">
+  <div class="section-kicker">Implementation roadmap</div>
+  <h2>A 90-day plan focused on commercial ownership, not content volume.</h2>
+  <div class="phase"><div class="phase-time">Weeks 1–2</div><div><h3>Clean the entity and tracking</h3><p>Remove incorrect sibling-brand/location references, resolve legal-page ownership, fix duplicate form firing, validate WhatsApp/phone tracking, repair the broken link, and decide the canonical URL for duplicate page groups.</p></div></div>
+  <div class="phase"><div class="phase-time">Weeks 2–5</div><div><h3>Create facility owner pages</h3><p>Launch unique Cheras and Bangsar pages with NAP, rooms, services, nearby hospitals, photographs, reviews, FAQs, schema and visit/availability CTAs. Point each GBP to the appropriate facility page.</p></div></div>
+  <div class="phase"><div class="phase-time">Weeks 3–7</div><div><h3>Recover Chinese discovery</h3><p>Correct translation and brand defects, add Chinese URLs to the sitemap, validate hreflang, submit in GSC, request indexation and monitor Chinese-prefix impressions separately.</p></div></div>
+  <div class="phase"><div class="phase-time">Weeks 6–12</div><div><h3>Expand high-intent services</h3><p>Build or strengthen pages for dementia/memory care, bedridden nursing, respite/short stay, post-hospital rehabilitation and day care—only where the service is genuinely available and operationally supported.</p></div></div>
+  <h3>Responsibilities</h3>
+  <div class="grid grid-3">
+    <div class="card"><h3>Sommerfield team</h3><p>Approve facility facts, legal entity wording, services, clinical claims, room information, pricing approach, photography and Chinese terminology.</p></div>
+    <div class="card"><h3>Website implementation</h3><p>Build pages, redirects, metadata, sitemap, hreflang, schema and analytics changes; verify rendered HTML on mobile and desktop.</p></div>
+    <div class="card"><h3>SEO &amp; admissions measurement</h3><p>Track rankings, GSC coverage, enquiries, facility visits and admissions; maintain reason-lost data so growth decisions move beyond button clicks.</p></div>
+  </div>
+  <h3>90-day acceptance checklist</h3>
+  <ul class="clean">
+    <li>Cheras and Bangsar have separate indexable owner pages</li>
+    <li>Each GBP points to its matching facility page</li>
+    <li>Priority Chinese URLs are known and indexed in GSC</li>
+    <li>No incorrect Woodrose/Shah Alam references remain on Sommerfield commercial pages</li>
+    <li>Form submission fires once per successful submission</li>
+    <li>WhatsApp, phone and form actions are tracked by facility and language</li>
+    <li>Organic reporting distinguishes contact actions, genuine enquiries, visits and admissions</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-kicker">Methodology and limitations</div>
+  <h2>Evidence used</h2>
+  <p>This audit combines live public crawling, WordPress REST and sitemap checks, Google Search Console performance and URL Inspection, GA4 organic traffic and key-event data, and a fixed 20-keyword mobile SERP panel localized to Kuala Lumpur, Cheras and Bangsar. Search-volume estimates are Malaysia-level directional values. Local and organic rankings can vary by device, date and exact user location.</p>
+  <div class="footnotes">
+    <p><strong>Important:</strong> A WhatsApp click, form event or phone click is not automatically a genuine enquiry, facility visit or admission. No website, analytics, Search Console, Google Business Profile or publishing changes were made as part of this audit.</p>
+    <p>Prepared for Sommerfield Homes · Audit date: 21 July 2026</p>
+  </div>
+</section>
+</main>
+<footer><span>Sommerfield Homes SEO &amp; Local Search Audit</span><span>21 July 2026</span></footer>
+</div>
+</body>
+</html>
