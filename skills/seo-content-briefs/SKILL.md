@@ -38,7 +38,7 @@ This repo is the unit of operation: run from the repo root. Read these canonical
 5. Specify on-page requirements: title/meta, canonical, schema types, internal links in and out.
 6. Write acceptance criteria ending with the falsifiable expected-signal line (this is what the next report's Section 3 grades).
 7. Run brief QA.
-8. If drafting the page too: follow the brief exactly, obey the voice/claims rules, and route the draft through `workflows/implementation-handoff.md` — customer-facing content is never published without client approval (see the WordPress skill's operating rules).
+8. If the page is to be drafted, hand off to `skills/seo-content-drafting`. Do not draft from the outline alone — a brief supplies structure and forbids invented statistics, which without a research step and a client fact base forces a hollow page by construction. Drafts route through `workflows/implementation-handoff.md`; customer-facing content is never published without client approval (see the WordPress skill's operating rules).
 
 ## Output location
 
