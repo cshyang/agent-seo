@@ -1,0 +1,85 @@
+version: 2
+notes: >-
+  Model routing for the SUA content conductor, executed via omp.
+  Provider ids and model refs are omp's own (see `omp models`). Kimi excluded.
+  Verified live 2026-07-31: glm-5.2 retrieved 4/4 real sources (URLs string-matched
+  against the live documents). gemini-3.6-flash produced 0/4 on two attempts — a
+  copyright refusal on verbatim framing, then a silent no-op on citation framing.
+  It is quarantined from every tool-using stage until that is understood; suspect
+  the omp<->Gemini tool-calling path, not the model.
+  GLM policy: always glm-5.2, the latest — never glm-5-turbo/5.1/5 or the
+  last-generation glm-4.7-flash tier.
+  Claude is NOT reachable as a provider here: the box has no ANTHROPIC_API_KEY,
+  only Claude Code CLI OAuth. Drive it as a separate CLI if ever needed.
+
+providers:
+  google:
+    api_key_env: GEMINI_API_KEY
+    notes: omp reads GEMINI_API_KEY and ignores GOOGLE_API_KEY. Key is in ~/.hermes/.env.
+  zai:
+    api_key_env: ZAI_API_KEY
+    notes: Value comes from GLM_API_KEY in ~/.hermes/.env. Also set in the herdr-server systemd unit.
+  openrouter:
+    api_key_env: OPENROUTER_API_KEY
+    notes: >-
+      Pay-per-token fallback with no rolling quota window. Use when a direct provider
+      returns 429. Model refs are openrouter/<vendor>/<model>, e.g.
+      openrouter/z-ai/glm-5.2. Verified 2026-07-31: glm-5.2, claude-sonnet-5 and
+      gpt-5.2 all answer. WATCH THE BALANCE — credits are finite, not a plan.
+  openai-codex:
+    auth: chatgpt_oauth
+    notes: ~/.pi/agent/auth.json. 7-day rolling quota — check `omp usage` before relying on it.
+
+models:
+  conductor:
+    primary: { provider: zai, model: glm-5.2 }
+    fallback: { provider: openrouter, model: z-ai/glm-5.2 }
+
+  research_synthesis:
+    primary: { provider: zai, model: glm-5.2 }
+    fallback: { provider: openrouter, model: z-ai/glm-5.2 }
+    notes: >-
+      Parallel retrieval fan-out. Must save verbatim source text to
+      .seo-ops/clients/<slug>/sources/ — paraphrase is a failed research stage.
+
+  outline:
+    primary: { provider: zai, model: glm-5.2 }
+    fallback: { provider: openrouter, model: z-ai/glm-5.2 }
+
+  writer:
+    # Which routes actually run. One entry = one draft. Add "challenger" to
+    # run a bake-off, then drop it once a winner is chosen.
+    enabled_routes: [primary]
+    primary:
+      provider: zai
+      model: glm-5.2
+      purpose: >-
+        Sole writer. Pangram arms A/B/C/E showed writer model is inert for
+        detection; verbatim quote density is the lever, not model choice.
+    challenger:
+      provider: openai-codex
+      model: gpt-5.6-sol
+      purpose: >-
+        Off by default. NB gpt-5.6 ships as luna/sol/terra and the difference
+        between them is unestablished here — pick deliberately before a bake-off.
+
+  seo_reviewer:
+    primary: { provider: zai, model: glm-5.2 }
+    fallback: { provider: openrouter, model: z-ai/glm-5.2 }
+
+  brand_commercial_reviewer:
+    primary: { provider: zai, model: glm-5.2 }
+    fallback: { provider: openrouter, model: z-ai/glm-5.2 }
+
+  factual_reviewer:
+    primary: { provider: zai, model: glm-5.2 }
+    fallback: { provider: openrouter, model: z-ai/glm-5.2 }
+    must_use_retrieved_sources: true
+    escalation:
+      provider: openai-codex
+      model: gpt-5.6-sol
+      purpose: Misattribution is the expensive failure — escalate when codex quota allows.
+
+  image_generation:
+    primary: { provider: openai-codex, model: gpt-image-2 }
+    notes: Unreviewed. google now offers gemini-3.1-flash-image / gemini-3-pro-image.
