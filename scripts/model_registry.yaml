@@ -1,16 +1,16 @@
-version: 2
+version: 3
 notes: >-
-  Model routing for the SUA content conductor, executed via omp.
-  Provider ids and model refs are omp's own (see `omp models`). Kimi excluded.
-  Verified live 2026-07-31: glm-5.2 retrieved 4/4 real sources (URLs string-matched
-  against the live documents). gemini-3.6-flash produced 0/4 on two attempts — a
-  copyright refusal on verbatim framing, then a silent no-op on citation framing.
-  It is quarantined from every tool-using stage until that is understood; suspect
-  the omp<->Gemini tool-calling path, not the model.
-  GLM policy: always glm-5.2, the latest — never glm-5-turbo/5.1/5 or the
-  last-generation glm-4.7-flash tier.
-  Claude is NOT reachable as a provider here: the box has no ANTHROPIC_API_KEY,
-  only Claude Code CLI OAuth. Drive it as a separate CLI if ever needed.
+  Model routing for the SUA content conductor.
+  GLM via ZAI coding plan (direct), GPT-5.6 Luna xhigh for draft/reviews,
+  Gemini 3.6 Flash for SEO review (free key, structured output only).
+  Verified live 2026-07-31:
+  - glm-5.2 (ZAI direct) retrieved 4/4 real sources, URLs string-matched.
+  - gemini-3.6-flash verified working via free Gemini API key for SEO review.
+    Previously failed 0/4 on verbatim source retrieval; quarantined to
+    structured-checklist stages only (no verbatim reproduction needed).
+  GLM policy: always glm-5.2 via ZAI coding plan, not OpenRouter.
+  Claude is NOT reachable as a provider here.
+
 
 providers:
   google:
@@ -28,7 +28,7 @@ providers:
       gpt-5.2 all answer. WATCH THE BALANCE — credits are finite, not a plan.
   openai-codex:
     auth: chatgpt_oauth
-    notes: ~/.pi/agent/auth.json. 7-day rolling quota — check `omp usage` before relying on it.
+    notes: "~/.pi/agent/auth.json. 7-day rolling quota — check `omp usage` before relying on it."
 
 models:
   conductor:
@@ -47,37 +47,42 @@ models:
     fallback: { provider: openrouter, model: z-ai/glm-5.2 }
 
   writer:
-    # Which routes actually run. One entry = one draft. Add "challenger" to
-    # run a bake-off, then drop it once a winner is chosen.
     enabled_routes: [primary]
     primary:
+      provider: openai-codex
+      model: gpt-5.6-luna
+      reasoning: xhigh
+      purpose: >-
+        GPT-5.6 Luna xhigh. Best prose writer. The draft stage receives
+        research.md and outline.md via stage chaining, so luna turns structured
+        inputs into quality prose. Watch: luna's fast-confidence may work against
+        the "cut sections with no facts" discipline — review first draft carefully.
+    challenger:
       provider: zai
       model: glm-5.2
-      purpose: >-
-        Sole writer. Pangram arms A/B/C/E showed writer model is inert for
-        detection; verbatim quote density is the lever, not model choice.
-    challenger:
-      provider: openai-codex
-      model: gpt-5.6-sol
-      purpose: >-
-        Off by default. NB gpt-5.6 ships as luna/sol/terra and the difference
-        between them is unestablished here — pick deliberately before a bake-off.
+      reasoning: high
+      purpose: Off by default. Enable for a GLM-vs-GPT bake-off.
 
   seo_reviewer:
-    primary: { provider: zai, model: glm-5.2 }
-    fallback: { provider: openrouter, model: z-ai/glm-5.2 }
+    primary:
+      provider: google
+      model: gemini-3.6-flash
+      notes: >-
+        Structured checklist output only (keyword fit, meta quality, internal
+        links, FAQ schema). No verbatim source reproduction. Free Gemini API key.
 
   brand_commercial_reviewer:
     primary: { provider: zai, model: glm-5.2 }
     fallback: { provider: openrouter, model: z-ai/glm-5.2 }
 
   factual_reviewer:
-    primary: { provider: zai, model: glm-5.2 }
+    primary: { provider: zai, model: glm-5.2, reasoning: high }
     fallback: { provider: openrouter, model: z-ai/glm-5.2 }
     must_use_retrieved_sources: true
     escalation:
       provider: openai-codex
       model: gpt-5.6-sol
+      reasoning: xhigh
       purpose: Misattribution is the expensive failure — escalate when codex quota allows.
 
   image_generation:
