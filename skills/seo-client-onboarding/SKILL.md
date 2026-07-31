@@ -17,7 +17,7 @@ Run from the repo root and read these canonical files first:
 
 1. `templates/client-onboarding-template.md` — the full onboarding structure (Part A of the report spec).
 2. `schemas/client-config.schema.json` and `schemas/client-config.example.yaml` — the output contract.
-3. `templates/sme-seo-report-template-v1.2.md` Part A — context for why each baseline field exists.
+3. `templates/sme-seo-report-template-v1.3.md` Part A — context for why each baseline field exists.
 
 ## Steps
 

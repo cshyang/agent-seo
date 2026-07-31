@@ -16,7 +16,7 @@ Use when a report Section 6 action requires new or rewritten page content, or wh
 This repo is the unit of operation: run from the repo root. Read these canonical files first:
 
 1. `templates/content-brief-template.md` — the full brief spec including all `>> GEN:` instructions. Source of truth for structure and the demand gate.
-2. `templates/sme-seo-report-template-v1.2.md` Section 7 — the validation rules a brief depends on.
+2. `templates/sme-seo-report-template-v1.3.md` Section 7 — the validation rules a brief depends on.
 3. `methodology/geo-ai-citability.md` — answer blocks, entity clarity, citability requirements baked into every outline.
 4. `methodology/schema-checks.md` — schema requirements and deprecated rich-result expectations.
 5. The client's config and source report from `.seo-ops/clients/<slug>/` (see AGENTS.md state convention).

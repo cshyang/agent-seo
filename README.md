@@ -50,7 +50,7 @@ python scripts/validate_client_config.py schemas/client-config.example.yaml
 Check a generated markdown report for obvious delivery issues:
 
 ```bash
-python scripts/qa_report.py templates/sme-seo-report-template-v1.2.md --template
+python scripts/qa_report.py templates/sme-seo-report-template-v1.3.md --template
 ```
 
 Classify a GSC export draft:

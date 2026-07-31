@@ -17,7 +17,7 @@ Use when producing a monthly SEO/GEO report, preparing a client-facing SEO summa
 
 This repo is the unit of operation: run from the repo root. Read these canonical files — do not improvise report structure from this SKILL.md alone:
 
-1. `templates/sme-seo-report-template-v1.2.md` — the full report spec, section by section, including all `>> GEN:` generation instructions. This is the source of truth for structure, thresholds, and data-source rules.
+1. `templates/sme-seo-report-template-v1.3.md` — the full report spec, section by section, including all `>> GEN:` generation instructions. This is the source of truth for structure, thresholds, and data-source rules.
 2. `templates/report-qa-checklist.md` — pre-delivery checklist.
 3. `methodology/dataforseo-cost-control.md` — which pulls are monthly vs quarterly.
 4. The client's config and prior report from `.seo-ops/clients/<slug>/` (see AGENTS.md state convention).
